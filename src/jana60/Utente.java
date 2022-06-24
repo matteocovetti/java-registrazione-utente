@@ -19,7 +19,7 @@ public class Utente {
 	public Utente(String nome, String cognome, String email, String password, int eta) throws Exception {
 		super();
 
-		if (password.length() < 18 && password.length() > 12) {
+		if (password.length() < 8 || password.length() > 12) {
 			throw new Exception("La password deve essere minimo di 8 e massimo di 12 caratteri");
 		}
 		if (eta < 18) {
@@ -81,4 +81,9 @@ public class Utente {
 		this.eta = eta;
 	}
 
+	@Override
+	public String toString() {
+		return "Grazie per aver completato il profilo. Ecco i tuoi dati: " + "\n" + "Nome: " + nome + "\n" + "Cognome: "
+				+ cognome + "\n" + "Età: " + eta + "\n" + "Email: " + email + "\n" + "Password: " + password;
+	}
 }
